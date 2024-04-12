@@ -927,6 +927,7 @@ inline void SimpleTextImplDetails::EndDraw()
 	glDisableVertexAttribArray(AttributeColorF);
 	glDisableVertexAttribArray(AttributeColorB);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glUseProgram(0);
 }
 
 inline void SimpleTextImplDetails::CreateShaderProgram()

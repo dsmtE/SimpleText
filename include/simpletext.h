@@ -314,7 +314,7 @@ inline void SimpleText::SetColor(ForegroundBackground type, uint8_t r, uint8_t g
 	m_impl->SetColor(type, r, g, b, a);
 }
 
-void SimpleText::SetColorf(ForegroundBackground type, float r, float g, float b, float a)
+inline void SimpleText::SetColorf(ForegroundBackground type, float r, float g, float b, float a)
 {
 	uint8_t _r = SimpleTextImplDetails::clamp(static_cast<int>(r * 255.0f), 0, 255);
 	uint8_t _g = SimpleTextImplDetails::clamp(static_cast<int>(g * 255.0f), 0, 255);

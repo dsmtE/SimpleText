@@ -271,7 +271,6 @@ inline SimpleText::SimpleText()
 	m_impl->CreateFontTexture();
 	m_impl->CreateShaderProgram();
 	m_impl->CreateVBO();
-	m_impl->BindAttributes();
 	m_impl->BindUniforms();
 	ResetFont();
 }
@@ -987,6 +986,7 @@ inline void SimpleTextImplDetails::CreateShaderProgram()
 	m_shaderprogram = glCreateProgram();
 	glAttachShader(m_shaderprogram, m_vertexShader);
 	glAttachShader(m_shaderprogram, m_fragmentShader);
+	BindAttributes();
 	glLinkProgram(m_shaderprogram);
 
 	if (!Succeeded(m_shaderprogram, LINK))
